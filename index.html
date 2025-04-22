@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishika's 1st Birthday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="invitation-card">
+      <img src="images/pic.png" alt="Birthday Invitation" />
+    </div>
+    <div class="form-section">
+      <h2>Vishika's 1st Birthday</h2>
+      <p><strong>Will you attend?</strong></p>
+      <div class="rsvp-options">
+        <button class="yes" type="button" value="Yes" onclick="setResponse(this.value, event)">Yes</button>
+        <button class="maybe" type="button" value="Maybe" onclick="setResponse(this.value, event)">Maybe</button>
+        <button class="no" type="button" value="No" onclick="setResponse(this.value, event)">No</button>
+      </div>
+      <div class="guest-count-container" id="guest-count-container" style="display: none;">
+        <label for="guest-count-display">Total Guests (including you):</label>
+        <div class="guest-counter">
+          <button type="button" class="counter-btn" onclick="changeGuestCount(-1)">−</button>
+          <span id="guest-count-display">1</span>
+          <button type="button" class="counter-btn" onclick="changeGuestCount(1)">+</button>
+        </div>
+      </div>
+      <form id="rsvp-form">
+        
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email address" required />
+        <input type="hidden" name="response" id="rsvp-response" required />
+        <input type="hidden" name="total_guests" id="guest-count" value="1" />
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+      <div id="thank-you">Thank you for your RSVP! 🎉</div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
